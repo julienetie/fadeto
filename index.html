@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fade El</title>
+	<style>
+	h1{opacity: 1;}
+	.other-thing{opacity: 0.2;}
+	</style>
+</head>
+<body>
+	<h1 id="thing">Hello</h1>
+	<h1 class="other-thing">How Are you</h1>
+	<script>
+var fade = (function(window, undefined) {
+    
+    var assumedFps = 0.01667; // (1 / 60) / speed
+
+    function getComputedOpacity(el) {
+        var computedOpacity = window.getComputedStyle(el).opacity;
+        return computedOpacity;
+    }
+
+    //FadeTo 
+    function fadeTo( el, speed, fadeToVal, display ) {
+
+    	//Set opacity to computed value
+        el.style.opacity = getComputedOpacity(el);
+
+        //Self executing fade	
+        (function fade() {
+
+            //	This is not meant to represent duration, but assumes repaints at 60fps
+            var increments = assumedFps / speed; 
+            
+            //
+            if (el.style.opacity > fadeToVal) {
+                if ((el.style.opacity -= increments) < fadeToVal) {
+                    if (el.style.opacity <= 0.01) el.style.display =
+                        display;
+                } else {
+                    requestAnimationFrame(fade);
+                }
+            } else {
+                var val = parseFloat(el.style.opacity);
+                if (((val += increments) < fadeToVal)) {
+                    el.style.opacity = val;
+                    if (el.style.opacity > 0.99) el.style.display =
+                        display;
+                    requestAnimationFrame(fade);
+                }
+            }
+        })();
+    }
+
+    return {
+        to: fadeTo
+    };
+
+})(window);
+
+
+//Use Elements 
+var header = document.getElementById("thing");
+var otherThing = document.getElementsByClassName("other-thing")[0];
+
+//fade.to( element, speed, fadeToVal, display);
+fade.to(header, 3, 0, 'block');   // This is not 3 seconds but approximate assuming repaints at 60fps 
+//fade.to(otherThing, 3, 1);  // Display: 'block', 'none', 'inline' or omit the value for the default.
+
+function clickImage (e){
+	fade.to(otherThing, 3, 1); 
+	e.preventDefalut;
+}
+
+otherThing.addEventListener('click',clickImage, false);
+</script>
+</body>
+</html>
