@@ -1,3 +1,9 @@
+/**!
+ * fadeto
+ * @author  Julien Etienne   <julienetie>
+ * @license MIT
+ */
+
 
 /*
 requestAnimationFrame:
@@ -19,27 +25,30 @@ Things to do:
 */
 
 var fade = (function(window, undefined) {
-    
-    var assumedFps = 0.01667; // (1 / 60) / speed
 
+    var accuracy = 3; //    Decimals
+    var assumedFps = 1 / 60; //    assumed frames per second  
+        assumedFps = assumedFps.toPrecision(1 + accuracy);
+
+    //  Get current opacity
     function getComputedOpacity(el) {
         var computedOpacity = window.getComputedStyle(el).opacity;
         return computedOpacity;
     }
 
     //FadeTo 
-    function fadeTo( el, speed, fadeToVal, display ) {
+    function fadeTo(el, rate, fadeToVal, display) {
 
     	//Set opacity to computed value
         el.style.opacity = getComputedOpacity(el);
 
-        //Self executing fade	
+        //Self execute fade	
         (function fade() {
 
-            //	This is not meant to represent duration, but assumes repaints at 60fps
-            var increments = assumedFps / speed; 
+            //	Disclaimer: Not a representation of duration, but assumes repaints at assumedFps
+            var increments = assumedFps / rate; 
             
-            //
+            //Fade out then set display
             if (el.style.opacity > fadeToVal) {
                 if ((el.style.opacity -= increments) < fadeToVal) {
                     if (el.style.opacity <= 0.01) el.style.display =
@@ -48,6 +57,7 @@ var fade = (function(window, undefined) {
                     requestAnimationFrame(fade);
                 }
             } else {
+                //Fade in then set display
                 var val = parseFloat(el.style.opacity);
                 if (((val += increments) < fadeToVal)) {
                     el.style.opacity = val;
@@ -59,24 +69,9 @@ var fade = (function(window, undefined) {
         })();
     }
 
+    //Public action
     return {
         to: fadeTo
     };
 
 })(window);
-
-
-//Use Elements 
-var header = document.getElementById("thing");
-var otherThing = document.getElementsByClassName("other-thing")[0];
-
-//fade.to( element, speed, fadeToVal, display);
-fade.to(header, 3, 0, 'block');   // This is not 3 seconds but approximate assuming repaints at 60fps 
-//fade.to(otherThing, 3, 1);  // Display: 'block', 'none', 'inline' or omit the value for the default.
-
-function clickImage (e){
-	fade.to(otherThing, 3, 1); 
-	e.preventDefalut;
-}
-
-otherThing.addEventListener('click',clickImage, false);

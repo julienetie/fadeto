@@ -5,16 +5,32 @@
     <meta charset="UTF-8">
 
     <title>Fade El</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-h1{opacity: 1;}
-    .other-thing{opacity: 0.2;}
+        body{opacity: 0;}
     </style>
 </head>
 
-<body>
+<body id="show">
+<!--
     <h1 id="thing">Hello</h1>
-
     <h1 class="other-thing">How Are you</h1>
-
-    <script src="../fadeto.js"></script>
+-->
+<script src="../fadeto.js"></script>
+<script>
+    //Get Elements
+    var body = document.getElementById("show");
+    var header = document.getElementById("thing");
+    var otherThing = document.getElementsByClassName("other-thing")[0];
+    //fade.to( element, speed, fadeToVal, display);
+    //fade.to(header, 3, 0, 'block');
+    fade.to(body, 3, 1, 'block');
+    //fade.to(otherThing, 3, 1);  // Display: 'block', 'none', 'inline' or omit the value for default
+    function clickImage(e) {
+        fade.to(otherThing, 3, 1);
+        e.preventDefalut;
+    }
+    otherThing.addEventListener('click', clickImage, false);
+</script>
+ 
 </body>
