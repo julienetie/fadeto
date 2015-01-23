@@ -14,6 +14,7 @@ are more fluid and performance friendly than setInterval() & setTimeout.
 Lack of easing & other logics may also contribute to performance.
 	
 [fiddle example](http://jsfiddle.net/calpo/H7EEE/)
+
 [jsperf](http://jsperf.com/requestanimationframe-vs-setinterval-loop/7)
 	
 (jQuery 1.x & 2.x do not use requestAnimationFrame() )
