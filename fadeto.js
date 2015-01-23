@@ -5,25 +5,6 @@
  */
 
 
-/*
-requestAnimationFrame:
-IE 10, FF 33, Chrome, Safari 7.1, opera 26, IOS 7.1, android 4.4, android chrome.
-
-getComputedStyle:
-IE 9, FF 33, Chrome, Safari 7.1, opera 26, IOS 7.1, android 4.1, android chrome.
-
-getElementsByClassName:
-IE 9, FF 33, Chrome, Safari 7.1, Opera 28, IOS 7.1, android 4.1, android chrome.
-
-**This App supports IE10+, FF33+, Chrome, Safari 7.1+, android 4.1+ and android chrome.
-
-Things to do:
-
-1)  Make polyfils, (feature detect)
-2)  Check Memory leaks
-3)  Monitor repaints
-*/
-
 var fade = (function(window, undefined) {
 
     var accuracy = 3; //    Decimals
