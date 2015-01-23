@@ -7,7 +7,8 @@ oriented way without jQuery.
 Demo: Fork it
 [fadeto/fork](https://github.com/julienetie/fadeto/fork)
 
-Why?
+
+#Why?
 
 In regards to motion JS animations that use requestAnimationFrame 
 are more fluid and performance friendly than setInterval() & setTimeout. 
@@ -20,7 +21,8 @@ Lack of easing & other logics may also contribute to performance.
 (jQuery 1.x & 2.x do not use requestAnimationFrame() )
 
 
-Some pros:
+
+#Some pros:
 
 	- Better performance
 	- Efficiency for multiple animations
@@ -31,7 +33,7 @@ Some pros:
 	- no lib dependencies
 
 
-Some cons:
+#Some cons:
 
 	- Animation duration is approximate
 	- Support: 
