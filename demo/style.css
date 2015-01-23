@@ -8,43 +8,52 @@ html,body,div,section,span,h1,h2,h3,h4,h5,h6,applet,object,iframe,embed,audio,vi
 /*OPT(7) Customize the selection */::selection{background:#00fff3;color:#FF00CC;}::-moz-selection{background:#00fff3;color:#FF00CC;}::-webkit-selection{background:#00fff3;color:#FF00CC;}
 /*Vamonos!!!!*/
 
-body{
-	overflow: hidden;
-}
-section{
-	width: 100%;
-	height: 100%;
-	top:0;
-	left:0;
-	position: absolute;
-}
-figure{
-	width: 50%;
-	height: auto%;
-	background-color: darkslategray;
-	transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 10px 0px 10px 0px;
--moz-border-radius: 10px 0px 10px 0px;
--webkit-border-radius: 10px 0px 10px 0px;
-border: 0px solid #000000;
-overflow: hidden;
+body {
+    overflow:hidden
 }
 
-figure img{
-	width: 100%;
-	cursor: pointer;
+section {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    position:absolute
 }
 
-figcaption{
-	text-align: center;
-	font: 1.8rem arial;
-	line-height: 1.8rem;
-	padding: 0 0 0.5rem 0;
-	color: honeydew;
+figure {
+    width:60%;
+    height:auto%;
+    background-color:#2f4f4f;
+    transform:translate(-50%,-50%);
+    position:absolute;
+    top:50%;
+    left:50%;
+    border-radius:10px 0 10px 0;
+    -moz-border-radius:10px 0;
+    -webkit-border-radius:10px 0 10px 0;
+    border:0 solid #000;
+    overflow:hidden
 }
 
-h1{font-size: 1.3rem; padding: 0.3rem; text-shadow: 1px 1px 2px white;}
-.other-thing{opacity: 0.2;}
+figure img {
+    width:100%;
+    cursor:pointer
+}
+
+figcaption {
+    text-align:center;
+    font:1.8rem arial;
+    line-height:1.8rem;
+    padding:0 0 .5rem;
+    color:#f0fff0
+}
+
+h1 {
+    font-size:1.3rem;
+    padding:.3rem;
+    text-shadow:1px 1px 2px #fff
+}
+
+.other-thing {
+    opacity:.2
+}
