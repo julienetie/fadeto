@@ -1,15 +1,16 @@
-# fadeto
+fadeto
+==
+
 Fadeto: Fades elements current opacity to a new opacity In a performance oriented way without jQuery. 
 
 Demo: Fork it
-	https://github.com/julienetie/fadeto/fork
-
+	[fadeto/fork](https://github.com/julienetie/fadeto/fork)
 
 Why?
 
 	In regards to motion JS animations that use requestAnimationFrame() are more fluid and performance friendly than setInterval() / setTimeout. Lack of easing & other logics may also contribute to performance.  
-	http://jsfiddle.net/calpo/H7EEE/
-	http://jsperf.com/requestanimationframe-vs-setinterval-loop/7
+	[fiddle example](http://jsfiddle.net/calpo/H7EEE/)
+	[jsperf](http://jsperf.com/requestanimationframe-vs-setinterval-loop/7)
 	(jQuery 1.x & 2.x do not use requestAnimationFrame() )
 
 
