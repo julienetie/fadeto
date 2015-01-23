@@ -1,29 +1,47 @@
 # fadeto
-Fadeto: Fades elements current opacity to a new opacity In a performance oriented way without jQuery 
+Fadeto: Fades elements current opacity to a new opacity In a performance oriented way without jQuery. 
+
+Demo: Fork it
+	https://github.com/julienetie/fadeto/fork
 
 
-//
+Why?
 
+	In regards to motion JS animations that use requestAnimationFrame() are more fluid and performance friendly than setInterval() / setTimeout. Lack of easing & other logics may also contribute to performance.  
+	http://jsfiddle.net/calpo/H7EEE/
+	http://jsperf.com/requestanimationframe-vs-setinterval-loop/7
+	(jQuery 1.x & 2.x do not use requestAnimationFrame() )
+
+
+Some pros:
+
+	- Better performance
+	- Efficiency for multiple animations
+	- Initiates the fade with the current opacity value
+	- Fade to any value without defining fadeIn/ fadeOut
+	- tweak rate of frames
+	- define final display type
+	- no lib dependencies
+
+
+Some cons:
+
+	- Animation duration is approximate
+	- Support: 
+				IE10+, 
+				FF33+, 
+				Chrome, 
+				Safari 7.1+, 
+				opera 26+,
+				IOS 7.1+,
+				Android Browser 4.4+,
+				Android chrome
+	- No callbacks (Future update)
+	- No easing 
 
 
 The MIT License (MIT)
 
 Copyright 2015 Julien Etienne juienetie@gmail.com
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+https://github.com/julienetie/fadeto/blob/master/LICENSE
