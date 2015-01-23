@@ -1,6 +1,6 @@
 /**!
  * fadeto
- * @author  Julien Etienne   <julienetie>
+ * @author  Julien Etienne 
  * @license MIT
  */
 

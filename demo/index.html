@@ -4,33 +4,90 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Fade El</title>
-    <link rel="stylesheet" href="style.css">
+    <title>fadeto: Quick n' Dirty Slideshow</title>
+    <link href="style.css" rel="stylesheet">
     <style>
-        body{opacity: 0;}
+body,h1{opacity: 0;}
     </style>
 </head>
 
 <body id="show">
-<!--
-    <h1 id="thing">Hello</h1>
-    <h1 class="other-thing">How Are you</h1>
--->
-<script src="../fadeto.js"></script>
-<script>
-    //Get Elements
+    <h1>fadeto: Quick n' Dirty Slideshow</h1>
+
+    <section>
+        <figure>
+            <img src="images/6.png">
+
+            <figcaption>
+                :-0!!!
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/5.jpg">
+
+            <figcaption>
+                -_-
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/4.jpg">
+
+            <figcaption>
+                WTF
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/3.jpg">
+
+            <figcaption>
+                :-o
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/2.jpg">
+
+            <figcaption>
+                Ewwww!
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/1.jpg">
+
+            <figcaption>
+                Weeeeeeeeee!!!
+            </figcaption>
+        </figure>
+    </section><script src="../fadeto.js"></script> <script>
+//  Get Elements
+    var image = document.getElementsByTagName("figure");
     var body = document.getElementById("show");
-    var header = document.getElementById("thing");
-    var otherThing = document.getElementsByClassName("other-thing")[0];
-    //fade.to( element, speed, fadeToVal, display);
-    //fade.to(header, 3, 0, 'block');
-    fade.to(body, 3, 1, 'block');
-    //fade.to(otherThing, 3, 1);  // Display: 'block', 'none', 'inline' or omit the value for default
-    function clickImage(e) {
-        fade.to(otherThing, 3, 1);
-        e.preventDefalut;
-    }
-    otherThing.addEventListener('click', clickImage, false);
-</script>
- 
+    var header = document.getElementsByTagName("h1")[0];
+
+    //  Fade in page
+    fade.to(body, 1.3, 1);
+
+    //  Fade in header title slow
+    fade.to(header, 8, 1);
+
+
+    for ( var i = 0; i < image.length; i++ ) (function(i){ 
+
+        //  Fade out and display "none" for each picture & caption.
+        image[i].onclick = function() {
+            fade.to(image[i], 0.8, 0,'none');
+
+            //  Random color nonsense 
+            var ranCol = (Math.floor(255 /6)) *  (Math.floor(Math.random() * 6) + 1);
+            var newCol = (Math.floor(255 / image.length)) * i;
+            body.style.backgroundColor = 'rgb(' + ranCol + ',' + ranCol + ',' + newCol + ')';
+        }
+    })(i);
+
+    </script>
 </body>
+</html>
