@@ -1,6 +1,6 @@
 /**!
  * fadeto
- * @author  Julien Etienne 
+ * @author  Julien Etienne   <julienetie@gmail.com>
  * @license MIT
  */
 
@@ -10,6 +10,8 @@ var fade = (function(window, undefined) {
     var accuracy = 3; //    Decimals
     var assumedFps = 1 / 60; //    assumed frames per second  
         assumedFps = assumedFps.toPrecision(1 + accuracy);
+
+
 
     //  Get current opacity
     function getComputedOpacity(el) {
@@ -52,7 +54,7 @@ var fade = (function(window, undefined) {
 
     //Public action
     return {
-        to: fadeTo
+        to: fadeTo 
     };
 
 })(window);
