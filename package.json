@@ -1,0 +1,22 @@
+{
+  "name": "fadeto",
+  "version": "1.0.1",
+  "description": "Fades elements",
+  "main": "fadeto.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/julienetie/fadeto"
+  },
+  "author": "Julien Etienne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julienetie/fadeto/issues"
+  },
+  "homepage": "https://github.com/julienetie/fadeto",
+  "devDependencies": {
+    "webpack": "^1.7.3"
+  }
+}
