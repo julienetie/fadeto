@@ -1,4 +1,4 @@
-fadeto
+#fadeto
 ==
 
 Fade opacity using JavaScript & requestAnimationFrame 
@@ -12,7 +12,7 @@ Fade opacity using JavaScript & requestAnimationFrame
 	- define final display type
 	- no lib dependencies
 
-#Some cons:
+Some cons:
 
 	- Animation duration is approximate
 	- Support: Recent Chrome Firefox & Ie11, more testing required.
