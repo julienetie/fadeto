@@ -3,9 +3,6 @@
 
 Fade opacity using JavaScript & requestAnimationFrame 
 
-[fiddle example](http://jsfiddle.net/calpo/H7EEE/)
-
-
 	- Initiates the fade with the current opacity value
 	- Fade to any value without defining fadeIn/ fadeOut
 	- tweak rate of frames
